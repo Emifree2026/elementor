@@ -14,3 +14,23 @@ tools/*.png
 tools/php-guard.local.ini
 .env
 .env.local
+.claude.json
+
+# Key material — must never enter this repository, public or private.
+# The dedicated deploy key lives at ~/.ssh/id_ed25519_elementor, outside the repo.
+.ssh/
+*.pem
+*.key
+*.p12
+*.pfx
+*.ppk
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+id_ecdsa
+id_ecdsa.*
+id_dsa
+known_hosts
+*.pub
+!*.pub.example

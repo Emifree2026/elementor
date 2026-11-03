@@ -1,0 +1,173 @@
+{
+    "generated": "2026-11-03T11:15:05+00:00",
+    "media": {
+        "mech-logo": {
+            "id": 164,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/eco_air_final.png",
+            "alt": "ECO AIR Cleaner wordmark",
+            "width": 1400,
+            "height": 331,
+            "mime": ""
+        },
+        "mech-gallery-1": {
+            "id": 165,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/fotom1-gallery.webp",
+            "alt": "ECO AIR Cleaner, side view",
+            "width": 1200,
+            "height": 1584,
+            "mime": ""
+        },
+        "mech-gallery-2": {
+            "id": 166,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/fotom5-gallery.webp",
+            "alt": "ECO AIR Cleaner, control panel",
+            "width": 1200,
+            "height": 1600,
+            "mime": ""
+        },
+        "mech-gallery-3": {
+            "id": 167,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/fotom6-gallery.webp",
+            "alt": "ECO AIR Cleaner, installed",
+            "width": 1200,
+            "height": 1600,
+            "mime": ""
+        },
+        "mech-dimension-1": {
+            "id": 168,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/dimension-1.webp",
+            "alt": "ECO AIR dimensions, view 1",
+            "width": 1472,
+            "height": 1568,
+            "mime": ""
+        },
+        "mech-dimension-2": {
+            "id": 169,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/dimension-2.webp",
+            "alt": "ECO AIR dimensions, view 2",
+            "width": 1200,
+            "height": 1728,
+            "mime": ""
+        },
+        "mech-dimension-3": {
+            "id": 170,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/dimension-3.webp",
+            "alt": "ECO AIR dimensions, view 3",
+            "width": 535,
+            "height": 466,
+            "mime": ""
+        },
+        "mech-dimension-4": {
+            "id": 171,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/dimension-4-en.webp",
+            "alt": "ECO AIR enclosure with analog differential pressure indicator callout",
+            "width": 1328,
+            "height": 1552,
+            "mime": ""
+        },
+        "mech-performance-1": {
+            "id": 172,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/performance-1200-en.png",
+            "alt": "ECO AIR Cleaner performance curve, 1200 m³/h variant",
+            "width": 483,
+            "height": 516,
+            "mime": ""
+        },
+        "mech-performance-2": {
+            "id": 173,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/performance-1500-en.png",
+            "alt": "ECO AIR Cleaner performance curve, 1500 m³/h variant",
+            "width": 483,
+            "height": 516,
+            "mime": ""
+        },
+        "elec-logo": {
+            "id": 174,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/earia_final.png",
+            "alt": "EARIA wordmark",
+            "width": 1400,
+            "height": 333,
+            "mime": ""
+        },
+        "elec-gallery-1": {
+            "id": 175,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/fotoe1.webp",
+            "alt": "EARIA electrostatic precipitator, front view",
+            "width": 800,
+            "height": 1067,
+            "mime": ""
+        },
+        "elec-gallery-2": {
+            "id": 176,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/fotoe2-scaled.webp",
+            "alt": "EARIA electrostatic precipitator, side with hinged door open",
+            "width": 2560,
+            "height": 1920,
+            "mime": ""
+        },
+        "elec-gallery-3": {
+            "id": 177,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/fotoe3.webp",
+            "alt": "EARIA electrostatic precipitator, hinge detail",
+            "width": 800,
+            "height": 600,
+            "mime": ""
+        },
+        "elec-dimension-1": {
+            "id": 178,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/earia-dim-1.jpg",
+            "alt": "EARIA dimensions, view 1 — side elevation",
+            "width": 656,
+            "height": 654,
+            "mime": ""
+        },
+        "elec-dimension-2": {
+            "id": 179,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/earia-dim-2.jpg",
+            "alt": "EARIA dimensions, view 2 — front view",
+            "width": 709,
+            "height": 823,
+            "mime": ""
+        },
+        "elec-dimension-3": {
+            "id": 180,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/earia-dim-3-en.jpg",
+            "alt": "EARIA dimensions, view 3 — mounting view, 6 × M10 fasteners",
+            "width": 685,
+            "height": 614,
+            "mime": ""
+        },
+        "elec-performance-1": {
+            "id": 181,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/earia-performance-en-scaled.png",
+            "alt": "Performance comparison: Emifree System with self-cleaning vs. conventional system over time",
+            "width": 2560,
+            "height": 955,
+            "mime": ""
+        },
+        "dust-gallery-1": {
+            "id": 182,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/dust-1.webp",
+            "alt": "Emifree dust filtration unit, three-quarter view with control panel and extraction arm",
+            "width": 1376,
+            "height": 1824,
+            "mime": ""
+        },
+        "dust-gallery-2": {
+            "id": 183,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/dust-2.webp",
+            "alt": "Emifree dust filtration unit, full cabinet view with side ducting and collection bin",
+            "width": 1376,
+            "height": 1824,
+            "mime": ""
+        },
+        "dust-gallery-3": {
+            "id": 184,
+            "url": "http://landingwptest.local/wp-content/uploads/2026/11/dust-3.webp",
+            "alt": "Emifree dust filtration unit, front view with integrated cyclone and warning beacon",
+            "width": 1376,
+            "height": 1824,
+            "mime": ""
+        }
+    }
+}
