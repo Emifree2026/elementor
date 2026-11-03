@@ -1,0 +1,954 @@
+{
+  "version": "0.4",
+  "title": "Emifree Landing — hero",
+  "type": "page",
+  "content": [
+    {
+      "id": "5g1yhxi",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "width": {
+          "unit": "%",
+          "size": "100",
+          "sizes": []
+        },
+        "html_tag": "section",
+        "flex_direction": "column",
+        "flex_justify_content": "center",
+        "flex_gap": {
+          "row": "0",
+          "column": "0",
+          "unit": "px",
+          "isLinked": true
+        },
+        "flex_gap_mobile": {
+          "row": "32",
+          "column": "32",
+          "unit": "px",
+          "isLinked": true
+        },
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "48",
+          "right": "0",
+          "bottom": "48",
+          "left": "0",
+          "isLinked": false
+        },
+        "min_height": {
+          "unit": "custom",
+          "size": "100dvh",
+          "sizes": []
+        },
+        "position": "relative",
+        "overflow": "hidden",
+        "background_background": "classic",
+        "background_color": "#0A0A0A",
+        "_element_id": "hero",
+        "custom_css": "selector { scroll-margin-top: 80px; }"
+      },
+      "elements": [
+        {
+          "id": "n42vdph",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "full",
+            "width": {
+              "unit": "%",
+              "size": "100",
+              "sizes": []
+            },
+            "flex_direction": "column",
+            "flex_gap": {
+              "row": "0",
+              "column": "0",
+              "unit": "px",
+              "isLinked": true
+            },
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            },
+            "position": "absolute",
+            "_offset_x": {
+              "unit": "px",
+              "size": "0",
+              "sizes": []
+            },
+            "_offset_x_end": {
+              "unit": "px",
+              "size": "0",
+              "sizes": []
+            },
+            "_offset_y": {
+              "unit": "px",
+              "size": "0",
+              "sizes": []
+            },
+            "_offset_y_end": {
+              "unit": "px",
+              "size": "0",
+              "sizes": []
+            },
+            "z_index": 2,
+            "custom_css": "selector { pointer-events: none; background-image: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.50) 50%, rgba(0,0,0,0.70) 100%), linear-gradient(to bottom right, rgba(16,185,129,0.05) 0%, transparent 100%); }"
+          },
+          "elements": [],
+          "editor_settings": {
+            "title": "hero-scrim"
+          }
+        },
+        {
+          "id": "71w026q",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "boxed_width": {
+              "unit": "px",
+              "size": "1280",
+              "sizes": []
+            },
+            "flex_direction": "row",
+            "flex_direction_mobile": "column",
+            "flex_align_items": "center",
+            "flex_justify_content": "space-between",
+            "flex_gap": {
+              "row": "64",
+              "column": "64",
+              "unit": "px",
+              "isLinked": true
+            },
+            "flex_gap_tablet": {
+              "row": "40",
+              "column": "40",
+              "unit": "px",
+              "isLinked": true
+            },
+            "flex_gap_mobile": {
+              "row": "32",
+              "column": "32",
+              "unit": "px",
+              "isLinked": true
+            },
+            "padding": {
+              "unit": "px",
+              "top": "96",
+              "right": "32",
+              "bottom": "120",
+              "left": "32",
+              "isLinked": false
+            },
+            "padding_tablet": {
+              "unit": "px",
+              "top": "96",
+              "right": "24",
+              "bottom": "120",
+              "left": "24",
+              "isLinked": false
+            },
+            "padding_mobile": {
+              "unit": "px",
+              "top": "80",
+              "right": "16",
+              "bottom": "64",
+              "left": "16",
+              "isLinked": false
+            },
+            "position": "relative",
+            "z_index": 3
+          },
+          "elements": [
+            {
+              "id": "nfvy2gj",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "content_width": "full",
+                "width": {
+                  "unit": "%",
+                  "size": "100",
+                  "sizes": []
+                },
+                "flex_direction": "column",
+                "flex_align_items": "flex-start",
+                "flex_gap": {
+                  "row": "24",
+                  "column": "24",
+                  "unit": "px",
+                  "isLinked": true
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                },
+                "custom_css": "selector { flex: 1 1 58%; max-width: 640px; }"
+              },
+              "elements": [
+                {
+                  "id": "nowdqxt",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "content_width": "full",
+                    "width": {
+                      "unit": "%",
+                      "size": "100",
+                      "sizes": []
+                    },
+                    "flex_direction": "row",
+                    "flex_align_items": "center",
+                    "flex_wrap": "wrap",
+                    "flex_gap": {
+                      "row": "12",
+                      "column": "12",
+                      "unit": "px",
+                      "isLinked": true
+                    },
+                    "padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "gx2nvm3",
+                      "elType": "widget",
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Self-cleaning",
+                        "size": "sm",
+                        "typography_typography": "yes",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": "16",
+                          "sizes": []
+                        },
+                        "typography_font_weight": "500",
+                        "typography_line_height": {
+                          "unit": "custom",
+                          "size": "1.5",
+                          "sizes": []
+                        },
+                        "link": {
+                          "url": "#technology",
+                          "is_external": "",
+                          "nofollow": "",
+                          "custom_attributes": ""
+                        },
+                        "background_background": "classic",
+                        "background_color": "rgba(255,255,255,0.10)",
+                        "button_background_hover_background": "classic",
+                        "button_background_hover_color": "rgba(255,255,255,0.20)",
+                        "button_text_color": "#FFFFFF",
+                        "hover_color": "#FFFFFF",
+                        "border_border": "solid",
+                        "border_width": {
+                          "unit": "px",
+                          "top": "1",
+                          "right": "1",
+                          "bottom": "1",
+                          "left": "1",
+                          "isLinked": true
+                        },
+                        "border_color": "rgba(255,255,255,0.25)",
+                        "button_hover_border_color": "rgba(255,255,255,0.45)",
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "9999",
+                          "right": "9999",
+                          "bottom": "9999",
+                          "left": "9999",
+                          "isLinked": true
+                        },
+                        "text_padding": {
+                          "unit": "px",
+                          "top": "8",
+                          "right": "16",
+                          "bottom": "8",
+                          "left": "16",
+                          "isLinked": false
+                        },
+                        "custom_css": "selector { selector .elementor-button { backdrop-filter: blur(4px); } }"
+                      },
+                      "elements": [],
+                      "editor_settings": {
+                        "title": "hero-chip-cycle"
+                      }
+                    },
+                    {
+                      "id": "0cowj92",
+                      "elType": "widget",
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Energy Saving",
+                        "size": "sm",
+                        "typography_typography": "yes",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": "16",
+                          "sizes": []
+                        },
+                        "typography_font_weight": "500",
+                        "typography_line_height": {
+                          "unit": "custom",
+                          "size": "1.5",
+                          "sizes": []
+                        },
+                        "background_background": "classic",
+                        "background_color": "rgba(255,255,255,0.10)",
+                        "button_background_hover_background": "classic",
+                        "button_background_hover_color": "rgba(255,255,255,0.20)",
+                        "button_text_color": "#FFFFFF",
+                        "hover_color": "#FFFFFF",
+                        "border_border": "solid",
+                        "border_width": {
+                          "unit": "px",
+                          "top": "1",
+                          "right": "1",
+                          "bottom": "1",
+                          "left": "1",
+                          "isLinked": true
+                        },
+                        "border_color": "rgba(255,255,255,0.25)",
+                        "button_hover_border_color": "rgba(255,255,255,0.45)",
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "9999",
+                          "right": "9999",
+                          "bottom": "9999",
+                          "left": "9999",
+                          "isLinked": true
+                        },
+                        "text_padding": {
+                          "unit": "px",
+                          "top": "8",
+                          "right": "16",
+                          "bottom": "8",
+                          "left": "16",
+                          "isLinked": false
+                        },
+                        "custom_css": "selector { selector .elementor-button { backdrop-filter: blur(4px); } }"
+                      },
+                      "elements": [],
+                      "editor_settings": {
+                        "title": "hero-chip-energy"
+                      }
+                    },
+                    {
+                      "id": "d3blm5d",
+                      "elType": "widget",
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "HEPA filter",
+                        "size": "sm",
+                        "typography_typography": "yes",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": "16",
+                          "sizes": []
+                        },
+                        "typography_font_weight": "500",
+                        "typography_line_height": {
+                          "unit": "custom",
+                          "size": "1.5",
+                          "sizes": []
+                        },
+                        "link": {
+                          "url": "/en/knowledge/hepa-filters-cnc-industrial-workshops/",
+                          "is_external": "",
+                          "nofollow": "",
+                          "custom_attributes": ""
+                        },
+                        "background_background": "classic",
+                        "background_color": "rgba(255,255,255,0.10)",
+                        "button_background_hover_background": "classic",
+                        "button_background_hover_color": "rgba(255,255,255,0.20)",
+                        "button_text_color": "#FFFFFF",
+                        "hover_color": "#FFFFFF",
+                        "border_border": "solid",
+                        "border_width": {
+                          "unit": "px",
+                          "top": "1",
+                          "right": "1",
+                          "bottom": "1",
+                          "left": "1",
+                          "isLinked": true
+                        },
+                        "border_color": "rgba(255,255,255,0.25)",
+                        "button_hover_border_color": "rgba(255,255,255,0.45)",
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "9999",
+                          "right": "9999",
+                          "bottom": "9999",
+                          "left": "9999",
+                          "isLinked": true
+                        },
+                        "text_padding": {
+                          "unit": "px",
+                          "top": "8",
+                          "right": "16",
+                          "bottom": "8",
+                          "left": "16",
+                          "isLinked": false
+                        },
+                        "custom_css": "selector { selector .elementor-button { backdrop-filter: blur(4px); } }"
+                      },
+                      "elements": [],
+                      "editor_settings": {
+                        "title": "hero-chip-hepa"
+                      }
+                    }
+                  ],
+                  "editor_settings": {
+                    "title": "hero-badge"
+                  }
+                },
+                {
+                  "id": "w6fslqi",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "Low maintenance air filtration solutions",
+                    "header_size": "h1",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "60",
+                      "sizes": []
+                    },
+                    "typography_font_size_tablet": {
+                      "unit": "px",
+                      "size": "48",
+                      "sizes": []
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": "36",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "700",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.15",
+                      "sizes": []
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "em",
+                      "size": "-0.02",
+                      "sizes": []
+                    },
+                    "title_color": "#FFFFFF",
+                    "_element_id": "hero-title"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "hero-title"
+                  }
+                },
+                {
+                  "id": "tvjufmo",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "container_type": "flex",
+                    "content_width": "full",
+                    "width": {
+                      "unit": "%",
+                      "size": "100",
+                      "sizes": []
+                    },
+                    "flex_direction": "row",
+                    "flex_align_items": "center",
+                    "flex_wrap": "wrap",
+                    "flex_gap": {
+                      "row": "16",
+                      "column": "16",
+                      "unit": "px",
+                      "isLinked": true
+                    },
+                    "padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "c3x21mf",
+                      "elType": "widget",
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "Contact Us!",
+                        "size": "sm",
+                        "typography_typography": "yes",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": "20",
+                          "sizes": []
+                        },
+                        "typography_font_weight": "600",
+                        "typography_line_height": {
+                          "unit": "custom",
+                          "size": "1.5",
+                          "sizes": []
+                        },
+                        "link": {
+                          "url": "#contact",
+                          "is_external": "",
+                          "nofollow": "",
+                          "custom_attributes": ""
+                        },
+                        "background_background": "gradient",
+                        "background_color": "#1D4ED8",
+                        "background_color_stop": {
+                          "unit": "%",
+                          "size": "0",
+                          "sizes": []
+                        },
+                        "background_color_b": "#06B6D4",
+                        "background_color_b_stop": {
+                          "unit": "%",
+                          "size": "100",
+                          "sizes": []
+                        },
+                        "background_gradient_type": "linear",
+                        "background_gradient_angle": {
+                          "unit": "deg",
+                          "size": "90",
+                          "sizes": []
+                        },
+                        "button_text_color": "#FFFFFF",
+                        "hover_color": "#FFFFFF",
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "9999",
+                          "right": "9999",
+                          "bottom": "9999",
+                          "left": "9999",
+                          "isLinked": true
+                        },
+                        "text_padding": {
+                          "unit": "px",
+                          "top": "20",
+                          "right": "40",
+                          "bottom": "20",
+                          "left": "40",
+                          "isLinked": false
+                        },
+                        "_element_id": "hero-primary",
+                        "custom_css": "selector:hover { selector:hover .elementor-button { transform: translateY(-2px); } }\nselector .elementor-button { box-shadow: 0px 10px 15px rgba(0,0,0,0.10); }\nselector .elementor-button:hover { box-shadow: 0px 20px 25px rgba(0,0,0,0.15); }"
+                      },
+                      "elements": [],
+                      "editor_settings": {
+                        "title": "hero-primary"
+                      }
+                    },
+                    {
+                      "id": "05dd6cl",
+                      "elType": "widget",
+                      "widgetType": "button",
+                      "settings": {
+                        "text": "See the technology behind it →",
+                        "size": "sm",
+                        "typography_typography": "yes",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": "16",
+                          "sizes": []
+                        },
+                        "typography_font_weight": "500",
+                        "typography_line_height": {
+                          "unit": "custom",
+                          "size": "1.5",
+                          "sizes": []
+                        },
+                        "link": {
+                          "url": "#technology",
+                          "is_external": "",
+                          "nofollow": "",
+                          "custom_attributes": ""
+                        },
+                        "background_background": "classic",
+                        "background_color": "transparent",
+                        "button_background_hover_background": "classic",
+                        "button_background_hover_color": "rgba(255,255,255,0.12)",
+                        "button_text_color": "#FFFFFF",
+                        "hover_color": "#FFFFFF",
+                        "border_border": "solid",
+                        "border_width": {
+                          "unit": "px",
+                          "top": "1",
+                          "right": "1",
+                          "bottom": "1",
+                          "left": "1",
+                          "isLinked": true
+                        },
+                        "border_color": "rgba(255,255,255,0.45)",
+                        "button_hover_border_color": "#FFFFFF",
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "9999",
+                          "right": "9999",
+                          "bottom": "9999",
+                          "left": "9999",
+                          "isLinked": true
+                        },
+                        "text_padding": {
+                          "unit": "px",
+                          "top": "20",
+                          "right": "32",
+                          "bottom": "20",
+                          "left": "32",
+                          "isLinked": false
+                        },
+                        "_element_id": "hero-secondary"
+                      },
+                      "elements": [],
+                      "editor_settings": {
+                        "title": "hero-secondary"
+                      }
+                    }
+                  ],
+                  "editor_settings": {
+                    "title": "hero-cta"
+                  }
+                }
+              ],
+              "editor_settings": {
+                "title": "hero-copy"
+              }
+            },
+            {
+              "id": "giag1lk",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "content_width": "full",
+                "width": {
+                  "unit": "%",
+                  "size": "100",
+                  "sizes": []
+                },
+                "flex_direction": "row",
+                "flex_align_items": "center",
+                "flex_justify_content": "center",
+                "flex_wrap": "wrap",
+                "flex_gap": {
+                  "row": "24",
+                  "column": "24",
+                  "unit": "px",
+                  "isLinked": true
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                },
+                "custom_css": "selector { flex: 0 1 34%; }"
+              },
+              "elements": [
+                {
+                  "id": "yqj748k",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Trusted by industry leaders</p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "12",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "400",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.4",
+                      "sizes": []
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "em",
+                      "size": "0.05",
+                      "sizes": []
+                    },
+                    "typography_text_transform": "uppercase",
+                    "text_color": "rgba(255,255,255,0.60)",
+                    "align": "center",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    },
+                    "custom_css": "selector { flex: 0 0 100%; }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "hero-logos-label"
+                  }
+                },
+                {
+                  "id": "t2frpf5",
+                  "elType": "widget",
+                  "widgetType": "image",
+                  "settings": {
+                    "image": {
+                      "value": {
+                        "id": "65",
+                        "url": "http://landingwptest.local/wp-content/uploads/2026/10/mb_svg-1.svg"
+                      },
+                      "library": "svg"
+                    },
+                    "image_size": "full",
+                    "space": {
+                      "unit": "px",
+                      "size": "284550",
+                      "sizes": []
+                    },
+                    "opacity": {
+                      "unit": "px",
+                      "size": "0.5",
+                      "sizes": []
+                    },
+                    "opacity_hover": {
+                      "unit": "px",
+                      "size": "1",
+                      "sizes": []
+                    },
+                    "custom_css": "selector { filter: grayscale(1) brightness(0) invert(1); transition: filter 0.3s ease, opacity 0.3s ease; }\nselector:hover { filter: none; }\n@media (max-width: 767px) { selector { max-height: 24px; } }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "hero-logo-mercedes"
+                  }
+                },
+                {
+                  "id": "wgjtaya",
+                  "elType": "widget",
+                  "widgetType": "image",
+                  "settings": {
+                    "image": {
+                      "value": {
+                        "id": "66",
+                        "url": "http://landingwptest.local/wp-content/uploads/2026/10/bmw-1.svg"
+                      },
+                      "library": "svg"
+                    },
+                    "image_size": "full",
+                    "space": {
+                      "unit": "px",
+                      "size": "30555",
+                      "sizes": []
+                    },
+                    "opacity": {
+                      "unit": "px",
+                      "size": "0.5",
+                      "sizes": []
+                    },
+                    "opacity_hover": {
+                      "unit": "px",
+                      "size": "1",
+                      "sizes": []
+                    },
+                    "custom_css": "selector { filter: grayscale(1) brightness(0) invert(1); transition: filter 0.3s ease, opacity 0.3s ease; }\nselector:hover { filter: none; }\n@media (max-width: 767px) { selector { max-height: 24px; } }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "hero-logo-bmw"
+                  }
+                },
+                {
+                  "id": "7e0iie2",
+                  "elType": "widget",
+                  "widgetType": "image",
+                  "settings": {
+                    "image": {
+                      "value": {
+                        "id": "67",
+                        "url": "http://landingwptest.local/wp-content/uploads/2026/10/gm-1.svg"
+                      },
+                      "library": "svg"
+                    },
+                    "image_size": "full",
+                    "space": {
+                      "unit": "px",
+                      "size": "30555",
+                      "sizes": []
+                    },
+                    "opacity": {
+                      "unit": "px",
+                      "size": "0.5",
+                      "sizes": []
+                    },
+                    "opacity_hover": {
+                      "unit": "px",
+                      "size": "1",
+                      "sizes": []
+                    },
+                    "custom_css": "selector { filter: grayscale(1) brightness(0) invert(1); transition: filter 0.3s ease, opacity 0.3s ease; }\nselector:hover { filter: none; }\n@media (max-width: 767px) { selector { max-height: 24px; } }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "hero-logo-gm"
+                  }
+                },
+                {
+                  "id": "z99usdg",
+                  "elType": "widget",
+                  "widgetType": "image",
+                  "settings": {
+                    "image": {
+                      "value": {
+                        "id": "68",
+                        "url": "http://landingwptest.local/wp-content/uploads/2026/10/NSK-1.svg"
+                      },
+                      "library": "svg"
+                    },
+                    "image_size": "full",
+                    "space": {
+                      "unit": "px",
+                      "size": "458100",
+                      "sizes": []
+                    },
+                    "opacity": {
+                      "unit": "px",
+                      "size": "0.5",
+                      "sizes": []
+                    },
+                    "opacity_hover": {
+                      "unit": "px",
+                      "size": "1",
+                      "sizes": []
+                    },
+                    "custom_css": "selector { filter: grayscale(1) brightness(0) invert(1); transition: filter 0.3s ease, opacity 0.3s ease; }\nselector:hover { filter: none; }\n@media (max-width: 767px) { selector { max-height: 24px; } }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "hero-logo-nsk"
+                  }
+                },
+                {
+                  "id": "d6ughpq",
+                  "elType": "widget",
+                  "widgetType": "image",
+                  "settings": {
+                    "image": {
+                      "value": {
+                        "id": "69",
+                        "url": "http://landingwptest.local/wp-content/uploads/2026/10/knorr-1.svg"
+                      },
+                      "library": "svg"
+                    },
+                    "image_size": "full",
+                    "space": {
+                      "unit": "px",
+                      "size": "6011130",
+                      "sizes": []
+                    },
+                    "opacity": {
+                      "unit": "px",
+                      "size": "0.5",
+                      "sizes": []
+                    },
+                    "opacity_hover": {
+                      "unit": "px",
+                      "size": "1",
+                      "sizes": []
+                    },
+                    "custom_css": "selector { filter: grayscale(1) brightness(0) invert(1); transition: filter 0.3s ease, opacity 0.3s ease; }\nselector:hover { filter: none; }\n@media (max-width: 767px) { selector { max-height: 24px; } }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "hero-logo-knorr"
+                  }
+                },
+                {
+                  "id": "ozous0f",
+                  "elType": "widget",
+                  "widgetType": "image",
+                  "settings": {
+                    "image": {
+                      "value": {
+                        "id": "70",
+                        "url": "http://landingwptest.local/wp-content/uploads/2026/10/siemens_logo-1.svg"
+                      },
+                      "library": "svg"
+                    },
+                    "image_size": "full",
+                    "space": {
+                      "unit": "px",
+                      "size": "559100",
+                      "sizes": []
+                    },
+                    "opacity": {
+                      "unit": "px",
+                      "size": "0.5",
+                      "sizes": []
+                    },
+                    "opacity_hover": {
+                      "unit": "px",
+                      "size": "1",
+                      "sizes": []
+                    },
+                    "custom_css": "selector { filter: grayscale(1) brightness(0) invert(1); transition: filter 0.3s ease, opacity 0.3s ease; }\nselector:hover { filter: none; }\n@media (max-width: 767px) { selector { max-height: 24px; } }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "hero-logo-siemens"
+                  }
+                }
+              ],
+              "editor_settings": {
+                "title": "hero-visual"
+              }
+            }
+          ],
+          "editor_settings": {
+            "title": "hero-inner"
+          }
+        }
+      ],
+      "editor_settings": {
+        "title": "Hero"
+      }
+    }
+  ],
+  "page_settings": []
+}

@@ -1,0 +1,16 @@
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Scratch output from the MCP client / browser probes
+tools/_*.json
+tools/_*.txt
+tools/_*.html
+tools/_*.out
+tools/_*.php
+tools/*.png
+
+# Local secrets / machine-specific paths
+tools/php-guard.local.ini
+.env
+.env.local

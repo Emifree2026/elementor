@@ -1,0 +1,1531 @@
+{
+  "version": "0.4",
+  "title": "Emifree Landing — technology",
+  "type": "page",
+  "content": [
+    {
+      "id": "nuo8pez",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "container_type": "flex",
+        "content_width": "full",
+        "width": {
+          "unit": "%",
+          "size": "100",
+          "sizes": []
+        },
+        "html_tag": "section",
+        "flex_direction": "column",
+        "flex_gap": {
+          "row": "80",
+          "column": "80",
+          "unit": "px",
+          "isLinked": true
+        },
+        "flex_gap_mobile": {
+          "row": "48",
+          "column": "48",
+          "unit": "px",
+          "isLinked": true
+        },
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "0",
+          "bottom": "96",
+          "left": "0",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "48",
+          "right": "0",
+          "bottom": "48",
+          "left": "0",
+          "isLinked": false
+        },
+        "position": "relative",
+        "background_background": "gradient",
+        "background_color": "#F8FAFC",
+        "background_color_stop": {
+          "unit": "%",
+          "size": "0",
+          "sizes": []
+        },
+        "background_color_b": "#EFF6FF",
+        "background_color_b_stop": {
+          "unit": "%",
+          "size": "100",
+          "sizes": []
+        },
+        "background_gradient_type": "linear",
+        "background_gradient_angle": {
+          "unit": "deg",
+          "size": "135",
+          "sizes": []
+        },
+        "_element_id": "technology",
+        "custom_css": "selector { scroll-margin-top: 80px; }"
+      },
+      "elements": [
+        {
+          "id": "vx1qtv9",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "boxed",
+            "boxed_width": {
+              "unit": "px",
+              "size": "1280",
+              "sizes": []
+            },
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "flex_gap": {
+              "row": "24",
+              "column": "24",
+              "unit": "px",
+              "isLinked": true
+            },
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "right": "32",
+              "bottom": "0",
+              "left": "32",
+              "isLinked": false
+            },
+            "padding_tablet": {
+              "unit": "px",
+              "top": "0",
+              "right": "24",
+              "bottom": "0",
+              "left": "24",
+              "isLinked": false
+            },
+            "padding_mobile": {
+              "unit": "px",
+              "top": "0",
+              "right": "16",
+              "bottom": "0",
+              "left": "16",
+              "isLinked": false
+            }
+          },
+          "elements": [
+            {
+              "id": "940iffx",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Choose the Right <span class=\"accent\">Filtration Technology</span> for Your Process",
+                "header_size": "h2",
+                "typography_typography": "yes",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": "48",
+                  "sizes": []
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": "40",
+                  "sizes": []
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": "32",
+                  "sizes": []
+                },
+                "typography_font_weight": "700",
+                "typography_line_height": {
+                  "unit": "custom",
+                  "size": "1.2",
+                  "sizes": []
+                },
+                "title_color": "#0F172A",
+                "align": "center",
+                "_element_id": "technology-title",
+                "custom_css": "selector .elementor-heading-title .accent { color: #1D4ED8; }"
+              },
+              "elements": [],
+              "editor_settings": {
+                "title": "technology-title"
+              }
+            },
+            {
+              "id": "2a5brj0",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Whether you handle oil mist, emulsions, smoke, or ultra-fine aerosols, our self-cleaning filtration systems deliver cleaner air, lower maintenance, and stable performance.</p>",
+                "typography_typography": "yes",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": "20",
+                  "sizes": []
+                },
+                "typography_line_height": {
+                  "unit": "custom",
+                  "size": "1.4",
+                  "sizes": []
+                },
+                "text_color": "#475569",
+                "align": "center",
+                "paragraph_spacing": {
+                  "unit": "px",
+                  "size": "0",
+                  "sizes": []
+                },
+                "custom_css": "selector { max-width: 768px; margin-inline: auto; }"
+              },
+              "elements": [],
+              "editor_settings": {
+                "title": "technology-lead"
+              }
+            },
+            {
+              "id": "73p6nm7",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Compare technologies below or jump directly to the right solution.</p>",
+                "typography_typography": "yes",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": "14",
+                  "sizes": []
+                },
+                "typography_line_height": {
+                  "unit": "custom",
+                  "size": "1.43",
+                  "sizes": []
+                },
+                "text_color": "#64748B",
+                "align": "center",
+                "paragraph_spacing": {
+                  "unit": "px",
+                  "size": "0",
+                  "sizes": []
+                }
+              },
+              "elements": [],
+              "editor_settings": {
+                "title": "technology-note"
+              }
+            }
+          ],
+          "editor_settings": {
+            "title": "technology-header"
+          }
+        },
+        {
+          "id": "xis0vkh",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "grid",
+            "content_width": "boxed",
+            "boxed_width": {
+              "unit": "px",
+              "size": "1280",
+              "sizes": []
+            },
+            "grid_columns_grid": {
+              "unit": "fr",
+              "size": "2",
+              "sizes": []
+            },
+            "grid_columns_grid_mobile": {
+              "unit": "fr",
+              "size": "1",
+              "sizes": []
+            },
+            "grid_rows_grid": {
+              "unit": "custom",
+              "size": "auto",
+              "sizes": []
+            },
+            "grid_gaps": {
+              "row": "32",
+              "column": "32",
+              "unit": "px",
+              "isLinked": true
+            },
+            "grid_gaps_tablet": {
+              "row": "24",
+              "column": "24",
+              "unit": "px",
+              "isLinked": true
+            },
+            "grid_gaps_mobile": {
+              "row": "24",
+              "column": "24",
+              "unit": "px",
+              "isLinked": true
+            },
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "right": "32",
+              "bottom": "0",
+              "left": "32",
+              "isLinked": false
+            },
+            "padding_tablet": {
+              "unit": "px",
+              "top": "0",
+              "right": "24",
+              "bottom": "0",
+              "left": "24",
+              "isLinked": false
+            },
+            "padding_mobile": {
+              "unit": "px",
+              "top": "0",
+              "right": "16",
+              "bottom": "0",
+              "left": "16",
+              "isLinked": false
+            }
+          },
+          "elements": [
+            {
+              "id": "n9w14wt",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "content_width": "full",
+                "width": {
+                  "unit": "%",
+                  "size": "100",
+                  "sizes": []
+                },
+                "flex_direction": "column",
+                "flex_align_items": "flex-start",
+                "flex_gap": {
+                  "row": "16",
+                  "column": "16",
+                  "unit": "px",
+                  "isLinked": true
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "24",
+                  "right": "24",
+                  "bottom": "24",
+                  "left": "24",
+                  "isLinked": true
+                },
+                "padding_tablet": {
+                  "unit": "px",
+                  "top": "32",
+                  "right": "32",
+                  "bottom": "32",
+                  "left": "32",
+                  "isLinked": true
+                },
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_border": "solid",
+                "border_width": {
+                  "unit": "px",
+                  "top": "1",
+                  "right": "1",
+                  "bottom": "1",
+                  "left": "1",
+                  "isLinked": true
+                },
+                "border_color": "#F1F5F9",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "24",
+                  "right": "24",
+                  "bottom": "24",
+                  "left": "24",
+                  "isLinked": true
+                },
+                "_element_id": "tech-card-eco-air",
+                "custom_css": "selector { transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease; box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1), 0px 10px 10px -5px rgba(0,0,0,0.04); }"
+              },
+              "elements": [
+                {
+                  "id": "s1j8gcj",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Best for Oil Mist & Emulsions</p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "12",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "600",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.33",
+                      "sizes": []
+                    },
+                    "_background_background": "classic",
+                    "_background_color": "#FEF3C7",
+                    "text_color": "#92400E",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    },
+                    "_padding": {
+                      "unit": "px",
+                      "top": "4",
+                      "right": "12",
+                      "bottom": "4",
+                      "left": "12",
+                      "isLinked": false
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-eco-air-badge"
+                  }
+                },
+                {
+                  "id": "9r17wdw",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "ECO AIR CLEANER",
+                    "header_size": "h3",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "36",
+                      "sizes": []
+                    },
+                    "typography_font_size_tablet": {
+                      "unit": "px",
+                      "size": "24",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "700",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.2",
+                      "sizes": []
+                    },
+                    "title_color": "#0F172A"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-eco-air-title"
+                  }
+                },
+                {
+                  "id": "yn1gmuw",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Mechanical Oil Mist Separator</p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "14",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.43",
+                      "sizes": []
+                    },
+                    "text_color": "#64748B",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-eco-air-subtitle"
+                  }
+                },
+                {
+                  "id": "1ai9nrn",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Constant suction performance through self-cleaning mechanical filtration and oil recycling.</p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "text_color": "#475569",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-eco-air-description"
+                  }
+                },
+                {
+                  "id": "e9zq82v",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<ul><li>Self-cleaning system</li><li>No filter mats</li><li>Oil recycling</li><li>Up to 1,500 m³/h</li></ul>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "text_color": "#334155",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    },
+                    "custom_css": "selector ul { margin: 0; padding-inline-start: 20px; list-style: disc; }\nselector li { margin-block-end: 4px; }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-eco-air-bullets"
+                  }
+                },
+                {
+                  "id": "b0hdfgu",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p><a href=\"#technology-eco-air\">Learn How It Works →</a></p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "500",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "text_color": "#2563EB",
+                    "link_color": "#2563EB",
+                    "link_hover_color": "#1D4ED8",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    },
+                    "custom_css": "selector a { text-decoration: none; }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-eco-air-cta"
+                  }
+                }
+              ],
+              "editor_settings": {
+                "title": "tech-card-eco-air"
+              }
+            },
+            {
+              "id": "05vnq2x",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "content_width": "full",
+                "width": {
+                  "unit": "%",
+                  "size": "100",
+                  "sizes": []
+                },
+                "flex_direction": "column",
+                "flex_align_items": "flex-start",
+                "flex_gap": {
+                  "row": "16",
+                  "column": "16",
+                  "unit": "px",
+                  "isLinked": true
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "24",
+                  "right": "24",
+                  "bottom": "24",
+                  "left": "24",
+                  "isLinked": true
+                },
+                "padding_tablet": {
+                  "unit": "px",
+                  "top": "32",
+                  "right": "32",
+                  "bottom": "32",
+                  "left": "32",
+                  "isLinked": true
+                },
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_border": "solid",
+                "border_width": {
+                  "unit": "px",
+                  "top": "1",
+                  "right": "1",
+                  "bottom": "1",
+                  "left": "1",
+                  "isLinked": true
+                },
+                "border_color": "#F1F5F9",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "24",
+                  "right": "24",
+                  "bottom": "24",
+                  "left": "24",
+                  "isLinked": true
+                },
+                "_element_id": "tech-card-earia",
+                "custom_css": "selector { transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease; box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1), 0px 10px 10px -5px rgba(0,0,0,0.04); }"
+              },
+              "elements": [
+                {
+                  "id": "u4vi9gd",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Best for Smoke & Fine Aerosols</p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "12",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "600",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.33",
+                      "sizes": []
+                    },
+                    "_background_background": "classic",
+                    "_background_color": "#F3E8FF",
+                    "text_color": "#6B21A8",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    },
+                    "_padding": {
+                      "unit": "px",
+                      "top": "4",
+                      "right": "12",
+                      "bottom": "4",
+                      "left": "12",
+                      "isLinked": false
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-earia-badge"
+                  }
+                },
+                {
+                  "id": "y2vhghg",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "EARIA",
+                    "header_size": "h3",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "36",
+                      "sizes": []
+                    },
+                    "typography_font_size_tablet": {
+                      "unit": "px",
+                      "size": "24",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "700",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.2",
+                      "sizes": []
+                    },
+                    "title_color": "#0F172A"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-earia-title"
+                  }
+                },
+                {
+                  "id": "rft2kz7",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Electrostatic Filtration System</p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "14",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.43",
+                      "sizes": []
+                    },
+                    "text_color": "#64748B",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-earia-subtitle"
+                  }
+                },
+                {
+                  "id": "5uo0ww7",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Electrostatic filtration for smoke, oil mist and ultra-fine particles with minimal maintenance.</p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "text_color": "#475569",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-earia-description"
+                  }
+                },
+                {
+                  "id": "udaangr",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<ul><li>Smoke & aerosol capture</li><li>Electrostatic filtration</li><li>No cartridge exchange</li><li>Adjustable up to 1000 m³/h</li></ul>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "text_color": "#334155",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    },
+                    "custom_css": "selector ul { margin: 0; padding-inline-start: 20px; list-style: disc; }\nselector li { margin-block-end: 4px; }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-earia-bullets"
+                  }
+                },
+                {
+                  "id": "u7owktc",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p><a href=\"#technology-earia\">Learn How It Works →</a></p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "500",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "text_color": "#2563EB",
+                    "link_color": "#2563EB",
+                    "link_hover_color": "#1D4ED8",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    },
+                    "custom_css": "selector a { text-decoration: none; }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "tech-earia-cta"
+                  }
+                }
+              ],
+              "editor_settings": {
+                "title": "tech-card-earia"
+              }
+            }
+          ],
+          "editor_settings": {
+            "title": "technology-cards"
+          }
+        },
+        {
+          "id": "yi53dk8",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "grid",
+            "content_width": "boxed",
+            "boxed_width": {
+              "unit": "px",
+              "size": "1280",
+              "sizes": []
+            },
+            "grid_columns_grid": {
+              "unit": "fr",
+              "size": "2",
+              "sizes": []
+            },
+            "grid_columns_grid_mobile": {
+              "unit": "fr",
+              "size": "1",
+              "sizes": []
+            },
+            "grid_rows_grid": {
+              "unit": "custom",
+              "size": "auto",
+              "sizes": []
+            },
+            "grid_gaps": {
+              "row": "48",
+              "column": "48",
+              "unit": "px",
+              "isLinked": true
+            },
+            "grid_gaps_tablet": {
+              "row": "24",
+              "column": "24",
+              "unit": "px",
+              "isLinked": true
+            },
+            "grid_gaps_mobile": {
+              "row": "24",
+              "column": "24",
+              "unit": "px",
+              "isLinked": true
+            },
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "right": "32",
+              "bottom": "0",
+              "left": "32",
+              "isLinked": false
+            },
+            "padding_tablet": {
+              "unit": "px",
+              "top": "0",
+              "right": "24",
+              "bottom": "0",
+              "left": "24",
+              "isLinked": false
+            },
+            "padding_mobile": {
+              "unit": "px",
+              "top": "0",
+              "right": "16",
+              "bottom": "0",
+              "left": "16",
+              "isLinked": false
+            }
+          },
+          "elements": [
+            {
+              "id": "0lpz7ef",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "content_width": "full",
+                "width": {
+                  "unit": "%",
+                  "size": "100",
+                  "sizes": []
+                },
+                "flex_direction": "column",
+                "flex_align_items": "flex-start",
+                "flex_gap": {
+                  "row": "24",
+                  "column": "24",
+                  "unit": "px",
+                  "isLinked": true
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "24",
+                  "right": "24",
+                  "bottom": "24",
+                  "left": "24",
+                  "isLinked": true
+                },
+                "padding_tablet": {
+                  "unit": "px",
+                  "top": "32",
+                  "right": "32",
+                  "bottom": "32",
+                  "left": "32",
+                  "isLinked": true
+                },
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_border": "solid",
+                "border_width": {
+                  "unit": "px",
+                  "top": "1",
+                  "right": "1",
+                  "bottom": "1",
+                  "left": "1",
+                  "isLinked": true
+                },
+                "border_color": "#F1F5F9",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "24",
+                  "right": "24",
+                  "bottom": "24",
+                  "left": "24",
+                  "isLinked": true
+                },
+                "_element_id": "technology-eco-air",
+                "custom_css": "selector { transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease; box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1), 0px 10px 10px -5px rgba(0,0,0,0.04); }"
+              },
+              "elements": [
+                {
+                  "id": "k2loz2x",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "How ECO AIR Works",
+                    "header_size": "h3",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "24",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "700",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.33",
+                      "sizes": []
+                    },
+                    "title_color": "#0F172A"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "panel-eco-air-title"
+                  }
+                },
+                {
+                  "id": "1teh3nk",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Mechanical separation + coalescence</p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "14",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.43",
+                      "sizes": []
+                    },
+                    "text_color": "#64748B",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "panel-eco-air-subtitle"
+                  }
+                },
+                {
+                  "id": "d5h2jav",
+                  "elType": "widget",
+                  "widgetType": "image",
+                  "settings": {
+                    "image": {
+                      "id": "98",
+                      "url": "http://landingwptest.local/wp-content/uploads/2026/10/eco-air-self-cleaning-oil-mist-separator-diagram.webp",
+                      "size": "medium_large"
+                    },
+                    "image_size": "medium_large",
+                    "width": {
+                      "unit": "%",
+                      "size": "100",
+                      "sizes": []
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "panel-eco-air-image"
+                  }
+                },
+                {
+                  "id": "h8e982u",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<ol><li><strong>Pre-Filtration</strong> — Stainless steel mesh captures larger droplets before separation.</li><li><strong>Coalescence</strong> — Rotating drums enlarge tiny oil particles into larger droplets for efficient separation and oil recovery.</li><li><strong>Self-Cleaning & Recycling</strong> — Integrated spraying nozzles maintain constant performance and recycle collected oil.</li></ol>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "text_color": "#475569",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    },
+                    "custom_css": "selector ol { margin: 0; padding-inline-start: 20px; }\nselector li { margin-block-end: 8px; }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "panel-eco-air-steps"
+                  }
+                }
+              ],
+              "editor_settings": {
+                "title": "panel-eco-air"
+              }
+            },
+            {
+              "id": "qy1n9tk",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "content_width": "full",
+                "width": {
+                  "unit": "%",
+                  "size": "100",
+                  "sizes": []
+                },
+                "flex_direction": "column",
+                "flex_align_items": "flex-start",
+                "flex_gap": {
+                  "row": "24",
+                  "column": "24",
+                  "unit": "px",
+                  "isLinked": true
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "24",
+                  "right": "24",
+                  "bottom": "24",
+                  "left": "24",
+                  "isLinked": true
+                },
+                "padding_tablet": {
+                  "unit": "px",
+                  "top": "32",
+                  "right": "32",
+                  "bottom": "32",
+                  "left": "32",
+                  "isLinked": true
+                },
+                "background_background": "classic",
+                "background_color": "#FFFFFF",
+                "border_border": "solid",
+                "border_width": {
+                  "unit": "px",
+                  "top": "1",
+                  "right": "1",
+                  "bottom": "1",
+                  "left": "1",
+                  "isLinked": true
+                },
+                "border_color": "#F1F5F9",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "24",
+                  "right": "24",
+                  "bottom": "24",
+                  "left": "24",
+                  "isLinked": true
+                },
+                "_element_id": "technology-earia",
+                "custom_css": "selector { transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease; box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1), 0px 10px 10px -5px rgba(0,0,0,0.04); }"
+              },
+              "elements": [
+                {
+                  "id": "tgp1jkl",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "How EARIA Works",
+                    "header_size": "h3",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "24",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "700",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.33",
+                      "sizes": []
+                    },
+                    "title_color": "#0F172A"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "panel-earia-title"
+                  }
+                },
+                {
+                  "id": "1d3z53w",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<p>Electrostatic filtration</p>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "14",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.43",
+                      "sizes": []
+                    },
+                    "text_color": "#64748B",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "panel-earia-subtitle"
+                  }
+                },
+                {
+                  "id": "kbagd2s",
+                  "elType": "widget",
+                  "widgetType": "image",
+                  "settings": {
+                    "image": {
+                      "id": "99",
+                      "url": "http://landingwptest.local/wp-content/uploads/2026/10/earia-electrostatic-air-filtration-diagram.webp",
+                      "size": "medium_large"
+                    },
+                    "image_size": "medium_large",
+                    "width": {
+                      "unit": "%",
+                      "size": "100",
+                      "sizes": []
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "panel-earia-image"
+                  }
+                },
+                {
+                  "id": "cp9a9ar",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "settings": {
+                    "editor": "<ol><li><strong>Stainless steel pre-filter</strong> — First stage captures larger particles to protect ionizer.</li><li><strong>Ionization</strong> — High voltage ionizer charges particles for electrostatic capture.</li><li><strong>Collector plates</strong> — Alternating plates attract and hold charged particles.</li><li><strong>Oil particle collection</strong> — Self-cleaning drain removes collected oil automatically.</li></ol>",
+                    "typography_typography": "yes",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "text_color": "#475569",
+                    "paragraph_spacing": {
+                      "unit": "px",
+                      "size": "0",
+                      "sizes": []
+                    },
+                    "custom_css": "selector ol { margin: 0; padding-inline-start: 20px; }\nselector li { margin-block-end: 8px; }"
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "panel-earia-steps"
+                  }
+                }
+              ],
+              "editor_settings": {
+                "title": "panel-earia"
+              }
+            }
+          ],
+          "editor_settings": {
+            "title": "technology-process"
+          }
+        },
+        {
+          "id": "i4vb53w",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "container_type": "flex",
+            "content_width": "full",
+            "width": {
+              "unit": "%",
+              "size": "100",
+              "sizes": []
+            },
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "flex_gap": {
+              "row": "32",
+              "column": "32",
+              "unit": "px",
+              "isLinked": true
+            },
+            "padding": {
+              "unit": "px",
+              "top": "32",
+              "right": "32",
+              "bottom": "32",
+              "left": "32",
+              "isLinked": true
+            },
+            "padding_tablet": {
+              "unit": "px",
+              "top": "48",
+              "right": "48",
+              "bottom": "48",
+              "left": "48",
+              "isLinked": true
+            },
+            "background_background": "classic",
+            "background_color": "#EFF6FF",
+            "border_radius": {
+              "unit": "px",
+              "top": "24",
+              "right": "24",
+              "bottom": "24",
+              "left": "24",
+              "isLinked": true
+            },
+            "custom_css": "selector { max-width: 896px; margin-inline: auto; box-shadow: 0px 20px 25px -5px rgba(0,0,0,0.1), 0px 10px 10px -5px rgba(0,0,0,0.04); }"
+          },
+          "elements": [
+            {
+              "id": "xxchy77",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Not sure which filtration technology fits your application?",
+                "header_size": "h3",
+                "typography_typography": "yes",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": "48",
+                  "sizes": []
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": "30",
+                  "sizes": []
+                },
+                "typography_font_weight": "700",
+                "typography_line_height": {
+                  "unit": "custom",
+                  "size": "1.2",
+                  "sizes": []
+                },
+                "title_color": "#0F172A",
+                "align": "center"
+              },
+              "elements": [],
+              "editor_settings": {
+                "title": "technology-cta-title"
+              }
+            },
+            {
+              "id": "ey0tn8t",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p>Tell us your contamination type, airflow requirements, or machine setup, we'll recommend the right solution.</p>",
+                "typography_typography": "yes",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": "18",
+                  "sizes": []
+                },
+                "typography_line_height": {
+                  "unit": "custom",
+                  "size": "1.55",
+                  "sizes": []
+                },
+                "text_color": "#334155",
+                "align": "center",
+                "paragraph_spacing": {
+                  "unit": "px",
+                  "size": "0",
+                  "sizes": []
+                },
+                "custom_css": "selector { max-width: 672px; }"
+              },
+              "elements": [],
+              "editor_settings": {
+                "title": "technology-cta-body"
+              }
+            },
+            {
+              "id": "7ivxjii",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "container_type": "flex",
+                "content_width": "full",
+                "width": {
+                  "unit": "%",
+                  "size": "100",
+                  "sizes": []
+                },
+                "flex_direction": "row",
+                "flex_align_items": "center",
+                "flex_justify_content": "center",
+                "flex_wrap": "wrap",
+                "flex_gap": {
+                  "row": "16",
+                  "column": "16",
+                  "unit": "px",
+                  "isLinked": true
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "rlbylhk",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "Get expert recommendation",
+                    "size": "sm",
+                    "typography_typography": "yes",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "500",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "link": {
+                      "url": "#contact",
+                      "is_external": "",
+                      "nofollow": "",
+                      "custom_attributes": ""
+                    },
+                    "background_background": "classic",
+                    "background_color": "#FFFFFF",
+                    "button_background_hover_background": "classic",
+                    "button_background_hover_color": "#F8FAFC",
+                    "button_text_color": "#334155",
+                    "hover_color": "#334155",
+                    "border_border": "solid",
+                    "border_width": {
+                      "unit": "px",
+                      "top": "1",
+                      "right": "1",
+                      "bottom": "1",
+                      "left": "1",
+                      "isLinked": true
+                    },
+                    "border_color": "#CBD5E1",
+                    "border_radius": {
+                      "unit": "px",
+                      "top": "9999",
+                      "right": "9999",
+                      "bottom": "9999",
+                      "left": "9999",
+                      "isLinked": true
+                    },
+                    "text_padding": {
+                      "unit": "px",
+                      "top": "14",
+                      "right": "24",
+                      "bottom": "14",
+                      "left": "24",
+                      "isLinked": false
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "technology-cta-primary"
+                  }
+                },
+                {
+                  "id": "al80wdj",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "settings": {
+                    "text": "View more Technical Specs →",
+                    "size": "sm",
+                    "typography_typography": "yes",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": "16",
+                      "sizes": []
+                    },
+                    "typography_font_weight": "500",
+                    "typography_line_height": {
+                      "unit": "custom",
+                      "size": "1.5",
+                      "sizes": []
+                    },
+                    "link": {
+                      "url": "#knowledge",
+                      "is_external": "",
+                      "nofollow": "",
+                      "custom_attributes": ""
+                    },
+                    "background_background": "classic",
+                    "background_color": "transparent",
+                    "button_text_color": "#1E40AF",
+                    "hover_color": "#1E3A8A",
+                    "border_radius": {
+                      "unit": "px",
+                      "top": "9999",
+                      "right": "9999",
+                      "bottom": "9999",
+                      "left": "9999",
+                      "isLinked": true
+                    },
+                    "text_padding": {
+                      "unit": "px",
+                      "top": "14",
+                      "right": "24",
+                      "bottom": "14",
+                      "left": "24",
+                      "isLinked": false
+                    }
+                  },
+                  "elements": [],
+                  "editor_settings": {
+                    "title": "technology-cta-secondary"
+                  }
+                }
+              ],
+              "editor_settings": {
+                "title": "technology-cta-actions"
+              }
+            }
+          ],
+          "editor_settings": {
+            "title": "technology-cta"
+          }
+        }
+      ],
+      "editor_settings": {
+        "title": "Technology"
+      }
+    }
+  ],
+  "page_settings": []
+}
