@@ -124,6 +124,36 @@ php scripts/backup-post.php 72 backups
 `verify-doc.mjs` reports container depth, the widget inventory (flagging `html` and `spacer`),
 text sitting outside a widget, elements with no editor title, and duplicate element titles.
 
+### PHP CLI probes
+
+`php` is not on the Windows PATH — the LocalWP binary is, and it needs the guard ini for the
+site's extensions and MySQL port:
+
+```bash
+PHP="C:/Users/vpedr/AppData/Roaming/Local/lightning-services/php-8.2.29+0/bin/win64/php.exe"
+
+# Elementor state of every product page row (template, edit mode, data length, CSS)
+"$PHP" -c tools/php-guard.ini scripts/probe-elementor-docs.php
+
+# Product-page health: renders all six partials and checks every theme asset
+# they reference against the filesystem, plus every ?quote= prefill slug against
+# the contact-form whitelist.
+"$PHP" -c tools/php-guard.ini scripts/render-route.php
+```
+
+`render-route.php` is the regression check for the two failure modes that actually bit the
+live site: a theme asset deleted while the PHP template still points at it, and a `?quote=`
+slug that the contact form does not accept. Both are silent — the page still renders.
+
+### Secret audit
+
+```bash
+node scripts/audit-secrets.mjs
+```
+
+Scans every blob in the git history for the MCP token and the SSH private key body, and
+reports counts and file names only. The repository is public; keep it that way.
+
 ---
 
 ## Current state
