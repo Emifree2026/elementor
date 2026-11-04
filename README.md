@@ -62,6 +62,9 @@ scripts/    PHP probes and helpers that read the live site
   backup-post.php              dump _elementor_data + generated CSS for a post
   sideload-product-media.php   push the product images into the Media Library
   probe-*.php                  read-only probes: pages, media, kit, post meta
+  probe-elementor-render.php   render a document outside a singular request
+  probe-product-route.php      exercise the product route end to end
+  diff-render.php              diff two renders of the same document
 
 backups/    dated backups, taken before every write
 ```
@@ -139,11 +142,55 @@ PHP="C:/Users/vpedr/AppData/Roaming/Local/lightning-services/php-8.2.29+0/bin/wi
 # they reference against the filesystem, plus every ?quote= prefill slug against
 # the contact-form whitelist.
 "$PHP" -c tools/php-guard.ini scripts/render-route.php
+
+# The virtual route end to end: query vars set, styles enqueued, body rendered.
+# The document id is forced through the emifree_product_elementor_document_id
+# filter, so the mechanism can be tested before the pages carry Elementor content.
+"$PHP" -c tools/php-guard.ini scripts/probe-product-route.php 72   # Elementor document
+"$PHP" -c tools/php-guard.ini scripts/probe-product-route.php 0    # PHP fallback
+"$PHP" -c tools/php-guard.ini scripts/probe-product-route.php 72 72  # bare-URL branch
 ```
 
 `render-route.php` is the regression check for the two failure modes that actually bit the
 live site: a theme asset deleted while the PHP template still points at it, and a `?quote=`
 slug that the contact form does not accept. Both are silent — the page still renders.
+
+### Serving an Elementor document on a virtual route
+
+The product pages are reached through rewrite rules
+(`inc/products-page-routes.php`), not through a page query. A virtual route is **never
+singular**: `is_singular()` is false and `get_the_ID()` is empty.
+
+Elementor gates its whole style pipeline on that:
+
+```php
+// includes/frontend.php — Frontend::init()
+if ( is_singular() && $document && $document->is_built_with_elementor() ) {
+    add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_styles' ], 20 );
+}
+```
+
+So on a virtual route Elementor never enqueues its styles, and the atomic stylesheet
+`local-<id>-frontend-*.css` is never generated — the document renders **unstyled**. The
+fix lives in the theme (`inc/elementor-product-docs.php`):
+
+```php
+do_action( 'elementor/post/render', $doc_id );   // tells the atomic style manager
+                                                      // which document to generate CSS for
+\Elementor\Plugin::instance()->frontend->enqueue_styles();  // public + idempotent
+```
+
+`probe-elementor-render.php` is the experiment that established this: it prints the
+enqueued style handles before and after the call, and the atomic handles
+(`local-72-frontend-desktop|tablet|mobile`) only appear once
+`Frontend::enqueue_styles()` is called explicitly.
+
+The document itself is resolved from the **page row**, not from a separate table: the
+product pages are WordPress pages whose `post_name` is exactly the slug the route
+matches, so the Elementor content lives in the page's own `_elementor_data` and the
+marketing team edits the page in Elementor. Both URLs — `/products/mechanical/` and
+`/en/products/mechanical/` — render the same document. A page with no Elementor content
+yet falls back to the PHP partial, so the routes keep working mid-migration.
 
 ### Secret audit
 
@@ -165,11 +212,18 @@ reports counts and file names only. The repository is public; keep it that way.
 | `/en/products/mechanical/` | 44 | PHP template. Copy + media transcribed; Elementor build not applied yet. |
 | `/en/products/electrostatic/` | 46 | PHP template. Copy + media transcribed; Elementor build not applied yet. |
 | `/en/products/dust/` | 48 | PHP template. Hero only in the PHP; copy + media transcribed. |
+| `/de/produkte/…` | 45 / 47 / 49 | PHP templates. Copy transcribed; Elementor build not applied yet. |
 
-The three product pages already exist as WordPress pages (44 / 46 / 48, children of the `products`
-page) and are also reachable as `/en/products/…` through the virtual routes in
-`inc/products-page-routes.php`. Both paths must render the same Elementor document once the
-migration lands.
+The six product pages already exist as WordPress pages (44–49, children of the `products` /
+`produkte` pages) and are also reachable as `/en/products/…` and `/de/produkte/…` through the
+virtual routes in `inc/products-page-routes.php`. Both paths must render the same Elementor
+document once the migration lands.
+
+**The route wiring is in place** (theme commit `c8a0f71`): the Elementor document lives in
+the page row's own `_elementor_data`, the shim templates delegate the body to
+`emifree_render_product_body()`, and `inc/elementor-product-docs.php` makes sure the atomic
+stylesheet is enqueued on the virtual route. Until a page carries Elementor content the PHP
+partial is still rendered, so nothing is visibly broken mid-migration.
 
 
 ### Known gaps on the live EN landing page
@@ -196,7 +250,8 @@ The three product pages are **virtual routes** registered in
 metadata and JSON-LD through `emifree_seo_page_with_breadcrumb()`.
 
 Migrating them means creating real Elementor documents and pointing the route at them, while
-keeping the SEO output and the hreflang map intact.
+keeping the SEO output and the hreflang map intact. The documents are the page rows
+themselves — see "Serving an Elementor document on a virtual route" above.
 
 Three things the atomic format cannot reproduce natively, each needing a deliberate decision:
 
