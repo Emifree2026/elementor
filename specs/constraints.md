@@ -123,13 +123,23 @@ real `gap`, and this Elementor install has **no Button Group / Icon List / Icon 
 it as a single widget. Shape: one `e-flexbox`, `flex-direction: row`, `flex-wrap: wrap`,
 `align-items: center`, `gap: 12–16px`, containing **widgets only**.
 
-Named instances in this build — **exactly three**:
+Named instances in this build — **exactly four**:
 
 | # | Instance | Where |
 |---|---|---|
 | E1-a | Hero value-chip strip (3 chips) | `hero-badge` |
 | E1-b | Hero CTA button group (primary + secondary) | `hero-cta` |
 | E1-c | Technology CTA card button group (2 buttons) | `technology-cta-actions` |
+| E1-d | Product gallery thumb strip (3 thumbnails) | `emifree-thumb-strip` |
+
+E1-d lives on the product pages (posts 44–49). It is the same shape as
+E1-a/E1-b: one `e-flexbox`, row, wrap, `align-items: center`, `gap: 8px`,
+holding **widgets only** — the bare `<img>` thumbnails. The strip's
+thumbs are **bare images, not links**: an atomic image with a link
+renders the anchor *around* the image and the kit styles that wrapper
+like a blue button (`e-default-button`), which the editor cannot
+restyle. The button semantics are added at runtime by
+`assets/js/sections/product-page.js` instead.
 
 **Native widget internals are not editor containers and do not count toward the cap:**
 `e-background-video` (+ content / controls), `e-tabs` (+ menu / tab / content-area / tab-content),
@@ -219,9 +229,27 @@ replaces it with `e-flexbox`/`e-grid`; the widgets and their order stay.
 * Plain CSS declarations, one per line.
 * Nested blocks are limited to **`&:hover`**, **`&:focus`**, **`&:active`**.
 * Media blocks: **`@media(--mobile)`** and **`@media(--tablet)`** — *not* `@media (max-width: 768px)`.
-* **Forbidden** inside a style string: descendant selectors (`span { … }`), compound selectors
-  (`&.is-active { … }`), pseudo-elements (`&::placeholder { … }`). These are a hard
-  *"Unsupported nested selector"* error or silently dead CSS. Style the widget itself.
+* **Forbidden** inside a style string: descendant selectors (`span { … }`, `& a { … }`), compound
+  selectors (`&.is-active { … }`), attribute selectors (`&[aria-current="true"] { … }`),
+  pseudo-elements (`&::placeholder { … }`). These are a hard *"Unsupported nested selector"*
+  error or silently dead CSS. Style the widget itself.
+* **Measured (product page, 2026-11-04):** an unsupported selector is not rejected — it is written
+  **verbatim into the rule body** and the browser discards it. `& a { color: inherit; }` produced
+
+  ```css
+  .elementor .e-b8940fe-211a{…;white-space: nowrap; & a { color: inherit; } }
+  ```
+
+  and `&[aria-current="true"] { … }` produced **no rule at all** (a grep for `aria-current` in
+  `local-44-frontend-desktop.css` returned nothing). `&:hover` **is** supported and is emitted as a
+  separate pseudo-state variant (`.elementor .e-<hash>:hover,.elementor .e-<hash>:focus-visible{…}`).
+* **Where a state that cannot be expressed here goes:** the theme. A state driven by an
+  attribute the runtime writes (`aria-current`, `.is-active`, `.is-visible`) belongs in
+  `assets/css/product-elementor.css`, scoped to `.emifree-product-doc` — the wrapper
+  `emifree_render_product_body()` prints around the product documents. An id or id+attribute
+  selector there outranks Elementor's `.elementor .e-<hash>` rules (0,2,0) whatever the
+  stylesheet order is. **Do not** work around it with a global `.e-paragraph-base a { … }` rule:
+  the landing page shares that class.
 * Shorthand `padding` / `margin` / `border` is supported — use it, do not split into longhand.
 * `var(--token)` inside `box-shadow` falls back to custom CSS — keep shadows literal.
 * A literal `font-family` value must be **one Google Font family name** (`Inter`), never a stack
@@ -268,12 +296,32 @@ not), the class must be on a real rendered ancestor.
 
 * **The atomic editor drops `data-*` attributes.** Any JS in this project that used
   `data-emifree-*` hooks must be re-scoped. Use the element's **`_cssid`** (a stable slug you set
-  in `element_config`) as the scope, e.g. `document.querySelectorAll('[data-cssid="hero"] …')` —
-  the live page scopes by `_cssid` for exactly this reason.
+  in `element_config`) as the scope — **`_cssid` renders as the DOM `id`**, so the hook is
+  `document.querySelectorAll('#emifree-thumb-1')`, *not* `[data-cssid="…"]`. It is the only
+  reliable hook the atomic editor leaves.
+* **`e-image` emits a second `id` attribute** — the attachment id — after the `_cssid` id
+  (`<img id="emifree-thumb-1" … id="189">`). The browser keeps the **first**, so
+  `getElementById` and `querySelector('#emifree-thumb-1')` both resolve to the `_cssid` ✓.
+* **The product pages' JS contract** lives in `assets/js/sections/product-page.js` and is keyed on
+  fixed ids that are the same on all six product documents (each page is a separate document, so
+  they never collide):
+
+  | Hook | Element |
+  |---|---|
+  | `.emifree-product-doc` | the wrapper the theme prints around the document |
+  | `#emifree-gallery-main` | the large gallery image |
+  | `img[id^="emifree-thumb-"]` | the thumbnails |
+  | `.elementor-element[id^="emifree-nav-"]` | the section-navigator items (containers only — the label and icon are widgets and carry no `elementor-element` class) |
+  | `#emifree-back-to-top` | the mobile back-to-top button |
+  | `#emifree-hero`, `#emifree-dimensions`, `#emifree-performance`, `#emifree-specs`, `#emifree-brochure` | the sections the navigator targets |
 * Theme JS that must keep working on an Elementor page must be **enqueued by the theme**, not
-  inlined in the page. The product pages currently carry a large inline `<script type="module">`
-  (gallery rotator, magnify, scroll-spy, back-to-top) that **cannot** survive the move as-is:
-  hoist it into `assets/js/` and enqueue it.
+  inlined in the page. The product pages used to carry a large inline `<script type="module">`
+  (gallery rotator, magnify, scroll-spy, back-to-top) that could not survive the move as-is.
+  **Done:** it is now `assets/js/sections/product-page.js`, enqueued by
+  `emifree_enqueue_product_page_assets()` in `inc/elementor-product-docs.php` at
+  `wp_enqueue_scripts` priority **20** — after Elementor registers its own stylesheets (priority
+  5) and after the theme's own enqueue, so it wins the cascade. The magnify panel did not survive
+  the move at all (deviation D1).
 * **`<table>` markup cannot be reproduced natively** — Elementor has no table widget. The product
   specs tables must become either a grid of widgets (label/value pairs) or a shortcode. This is a
   logged, deliberate substitution, not an accident.
@@ -380,6 +428,8 @@ cache.
 | "The SVG shows as a black blob." | `e-svg` forces `fill="currentColor"`; stroked paths need `fill="none"`. |
 | "The icon is on its own line / stretched." | Atomic containers are 100% wide. Add `width: fit-content`. |
 | "The dropdown works in the editor but the front end shows the old text." | The element cache. Run `update-page-settings` (settings `{}`). |
+| "I'll install Polylang/WPML so the German page can be edited separately." | Reject. §12 — one page per language is already implemented in the theme, and a plugin would double the hreflang output. |
+| "I'll make the German document a copy of the English one so they stay in sync." | Reject. §12.3 — the twin link is metadata, not a shared template. The documents are independent. |
 
 ---
 
@@ -393,5 +443,81 @@ cache.
 | Section map (copy + assets) | `specs/sections-map.md` |
 | Design tokens | `specs/design-tokens.md` |
 | Live documents | post **72** = EN landing (`/en/`); post **135** = DE |
+| Product documents | posts **44–49** (EN 44/46/48, DE 45/47/49) |
+| Product behaviour (JS) | theme: `assets/js/sections/product-page.js` |
+| Product states (CSS) | theme: `assets/css/product-elementor.css` |
+| Product document glue | theme: `inc/elementor-product-docs.php` |
+| Product document builder | `pipeline/src/product-sections.mjs` |
 | MCP server | `landing_wp_test-elementor` |
 | Build tooling | `C:\Users\vpedr\Projects\emifree-elementor\` |
+
+---
+
+## 12. Languages — the decision, and what it means for the build
+
+**Binding. Do not install, recommend or design around WPML, Polylang, TranslatePress or Weglot.**
+The site runs EN + DE with **one WordPress page per language**, and it does that with the theme's
+own code. This was a deliberate call (the site's owner ruled out paid plugins), not an oversight.
+
+### 12.1 Why no plugin
+
+| Plugin option | Why it loses |
+|---|---|
+| **WPML** | "A separate post per language" is a paid tier. The free tier translates interface strings only — which this theme does not need, because it hard-codes EN/DE copy rather than using gettext. |
+| **Polylang** | Same wall: Polylang Pro is what carries native cross-language content duplication; the free tier has no content model to duplicate. A free "Duplicate Content Addon" exists, but it re-implements what the theme is about to do anyway. |
+| **Either of them** | The theme **already emits its own hreflang**: `emifree_seo_page()` in `inc/seo.php` writes one `<link rel="alternate" hreflang="…">` per language plus an automatic `x-default`. A multilingual plugin emits a **second, competing** set. Two hreflang sets on one URL is a conflict search engines resolve by ignoring both. |
+| **Either of them** | The theme **already owns the routing**: `/en/…` and `/de/…` are rewrite rules the theme registers itself (`inc/products-page-routes.php`, `inc/knowledge.php`, `inc/nav.php`). A plugin's URL handling fights those rules. |
+| **Either of them** | The theme **already has the language plumbing**: `emifree_language` and `emifree_translation_of` post meta, an admin metabox and slug mirroring for the `blog_post` CPT (`inc/cpt-blog.php`). The plugin's headline feature is already ~80 % built in-house. |
+
+### 12.2 What the theme implements instead
+
+`inc/translations.php` (new) completes the layer:
+
+* `emifree_language` and `emifree_translation_of` are registered for the `page` post type, with the
+  same sanitisation the blog CPT uses.
+* Every page's edit screen carries a **Translations** box: the language, the twin, links to the
+  twin (edit / view), and a button that copies the twin's Elementor layout into this page.
+* `emifree_copy_elementor_document( $from_id, $to_id )` copies `_elementor_data`,
+  `_elementor_edit_mode`, `_elementor_template_type` and `_elementor_page_settings`, then
+  invalidates the target's cached render through Elementor's own public API
+  (`Document::save()`), which clears the generated CSS and the 24-hour `_elementor_element_cache`
+  row. Nothing deletes cache meta directly.
+* `inc/page-seed.php` links the seeded EN/DE pairs symmetrically:
+  `products ↔ produkte` (42 ↔ 43), `mechanical ↔ mechanische-filtration` (44 ↔ 45),
+  `electrostatic ↔ elektrostatische-filtration` (46 ↔ 47), `dust ↔ entstaubung` (48 ↔ 49).
+
+### 12.3 What this means when you build
+
+* **One Elementor document per language.** The EN and DE product pages are separate posts (44/46/48
+  and 45/47/49) with separate `_elementor_data`. A document is never shared between languages.
+* **Editing the German page must never touch the English one.** They are separate documents; the
+  twin link is metadata, not a shared template. The Translations box's "copy the sibling's layout"
+  button is the only way content crosses between them, and it is a deliberate, confirmed action.
+* **The hreflang map comes from the twin.** `emifree_seo_page()` keeps receiving its `hreflang`
+  array explicitly from the page template; do not add a second hreflang source in the document
+  itself (an Elementor page has no hreflang widget, and injecting one through a `html` widget is
+  forbidden by §2).
+* **Do not add a language switcher that is not there today.** The product pages get their
+  language links from the theme's own header/footer, not from the Elementor document.
+* **A future third language** is one more column in `emifree_get_seed_pages()` plus one more
+  Elementor document per page — not a plugin install.
+
+---
+
+## 13. Deviations log — where the atomic build differs from the PHP
+
+Every entry below is **deliberate** and was measured on the live pages (posts 44–49) on
+2026-11-04. Do not "fix" one of these by editing the document — they are the cost of the
+atomic format, and each has a documented reason.
+
+| # | Deviation | Why | Where the replacement lives |
+|---|---|---|---|
+| D1 | **Magnify / zoom panel dropped.** The PHP gallery opened a lightbox with a zoomed view. | The atomic editor has no modal/lightbox widget, and §2 forbids an `html` widget. Building a zoom from an `e-image` plus theme JS would need a fullscreen container that the atomic editor cannot express. | The gallery still swaps the main image (`#emifree-gallery-main`) and auto-advances. A lightbox, if it is wanted, is a theme-level feature, not a document-level one. |
+| D2 | **Hero CTA icon dropped.** The PHP drew a small arrow next to the hero buttons. | `e-paragraph`'s allowed HTML is `b, strong, sup, sub, s, em, u, ul, ol, li, blockquote, a, del, span, br` — **no SVG**. An icon therefore cannot live inside a button's label. The alternative (the icon as a sibling inside the button container) makes the whole pill clickable only if the anchor wraps both, which no atomic link widget does. | The button is a plain `e-button` with its text. If the icon comes back it must be an `e-svg` sibling *outside* the button, or the button must become a link-wrapped container. |
+| D3 | **Section-navigator icon sits beside the anchor, not inside it.** The PHP had `<a><svg/>Label</a>`. | No atomic link widget wraps sibling widgets, and an SVG cannot be in a paragraph. The `e-svg` is a sibling of the label inside the pill container; the label's `<a>` is the click target. | `pipeline/src/product-sections.mjs` → `buildSubmenu()`. The pill still reads as one unit (the icon is inside the pill's rounded background). |
+| D4 | **Thumbnails load the full-size file** (~47–60 KB each) instead of a downscaled candidate. | The atomic `e-image` emits **no `sizes` attribute**, so the browser cannot pick a smaller srcset candidate and takes the largest. `size: "full"` was kept on purpose — it is what guarantees the full URL is in the `srcset` the runtime reads to swap the main image. | `assets/js/sections/product-page.js` → `emifreeFullUrl()` reads the **largest `w` candidate** from the `srcset` (WordPress writes the candidates unordered, so position is not a signal). Accepting the bandwidth cost, or dropping the swap, is a product decision. |
+| D5 | **The back-to-top button's hidden state is theme-owned.** The document does not set `opacity: 0`. | The atomic converter rewrites `opacity: 0` into `opacity: 0%`, which is invalid and silently dropped. | `assets/css/product-elementor.css` — `#emifree-back-to-top { opacity: 0; pointer-events: none; }` and `.is-visible { opacity: 1; pointer-events: auto; }`. |
+| D6 | **The specs table became a grid of widgets**, not a `<table>`. | Elementor has no table widget; §2 forbids raw HTML. | The product documents, section "Specifications". |
+| D7 | **The link colour is theme-owned, not document-owned.** | `e-default-a` (kit default) makes every anchor the accent blue, which made the white "Up" label on the blue back-to-top pill invisible. | `assets/css/product-elementor.css` — `.emifree-product-doc .elementor .e-paragraph-base a { color: inherit; }` (0,3,1) beats `.elementor .e-default-a` (0,2,0). **Never** make this a global `.e-paragraph-base a` rule: the landing page shares that class. |
+
+

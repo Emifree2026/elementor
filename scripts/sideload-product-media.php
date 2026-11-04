@@ -61,6 +61,16 @@ $emifree_media = array(
 	'dust-gallery-1'     => array( 'assets/products/dust/dust-1.webp', 'Emifree dust filtration unit, three-quarter view with control panel and extraction arm' ),
 	'dust-gallery-2'     => array( 'assets/products/dust/dust-2.webp', 'Emifree dust filtration unit, full cabinet view with side ducting and collection bin' ),
 	'dust-gallery-3'     => array( 'assets/products/dust/dust-3.webp', 'Emifree dust filtration unit, front view with integrated cyclone and warning beacon' ),
+
+	// --- German variants --------------------------------------------------
+	// The same images with German labelling on the callouts. The EN and DE
+	// pages are separate documents with separate assets — the German page
+	// must never point at the English callout image.
+	'mech-dimension-4-de'   => array( 'assets/products/mechanical/dimension-4-de.webp', 'ECO AIR Gehäuse mit Analoger Differenzdruckanzeige-Callout (DE)' ),
+	'mech-performance-1-de' => array( 'assets/products/mechanical/performance-1200-de.png', 'ECO AIR Cleaner Leistungskurve, 1200 m³/h Variante' ),
+	'mech-performance-2-de' => array( 'assets/products/mechanical/performance-1500-de.png', 'ECO AIR Cleaner Leistungskurve, 1500 m³/h Variante' ),
+	'elec-dimension-3-de'   => array( 'assets/products/electrostatic/earia-dim-3-de.jpg', 'EARIA Maße, Ansicht 3 — Montageansicht, 6 × M10 Befestigung' ),
+	'elec-performance-1-de' => array( 'assets/products/electrostatic/earia-performance-de.png', 'Leistungsvergleich: Emifree-System mit Selbstreinigung gegen konventionelles System über die Zeit' ),
 );
 
 $emifree_theme_dir = get_template_directory();

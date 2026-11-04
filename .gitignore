@@ -10,6 +10,10 @@ tools/_*.out
 tools/_*.php
 tools/*.png
 
+# Generated Elementor documents. The source of truth is pipeline/src/*.mjs —
+# the JSON is rebuilt by `node pipeline/build-products.mjs` and must not drift.
+pipeline/out/
+
 # Local secrets / machine-specific paths
 tools/php-guard.local.ini
 .env
