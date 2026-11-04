@@ -13,12 +13,16 @@ photos without touching code.
 
 | Repo | Contains | Deploys to production? |
 |---|---|---|
-| **`Emifree2026/elementor`** (this repo) | Specs, build pipeline, tooling, page exports, backups | **No** — dev-only |
+| **`Emifree2026/elementor`** (this repo) | Specs, build pipeline, tooling, page snapshots, backups | **No** — dev-only |
 | `Emifree2026/themeWP_SEP_26` | The WordPress theme (PHP, CSS, assets) | Yes — via the theme ZIP |
 
 The theme keeps the running site. This repo keeps everything needed to *build* the Elementor
 documents. They are deliberately separate so the deploy artifact stays lean: the specs and the
 pipeline are ~250 KB of development material that has no business in production.
+
+> This repo is currently **public**. The deploy key gives read access, so nothing breaks — switch
+> it to private if the site copy in `specs/snapshots/` should not be world-readable.
+
 
 ---
 
@@ -30,29 +34,50 @@ specs/      the binding documents — READ specs/constraints.md FIRST
   elementor-blueprint.md  per-section trees, design, deviations (§4 = remediation backlog)
   sections-map.md      copy and assets per section, traced to the PHP source
   design-tokens.md     colors, fonts, spacing — resolved values, not Tailwind classes
-  HANDOVER.md          state of play at the end of the previous session
-  snapshots/           archived document trees
+  snapshots/           archived document trees (raw _elementor_data — a full restore point)
 
 pipeline/   the build pipeline (emits MCP build-composition payloads)
-  src/                 authoring modules
-  build.mjs            driver + verify()
-  out/                 generated payloads (one per section)
+  src/atomic.mjs       the atomic authoring DSL — el/flex/grid/heading/para/button/image
+  src/product-content*.mjs  product-page copy (EN + DE), transcribed verbatim from the PHP
+  src/content.mjs      landing-page copy + structured data
+  src/css.mjs          CSS → atomic style props (styles / variants / custom_css)
+  src/tokens.mjs       design tokens
+  src/assets.mjs       media manifest — attachment ids
+  src/media-manifest.json  product images after the Media Library sideload (ids 164–184)
+  assets/              source SVGs
 
-tools/      verification and MCP client
+tools/      verification, inspection and the MCP client
   verify-doc.mjs       check a document dump against the constraints
   inspect-atomic.mjs   print representative atomic nodes from a dump
+  css-of.js            print the generated atomic CSS rules for chosen elements
+  fix-svg-fill.js      add fill="none" to the children of an Elementor-hosted SVG
   mcpcall.js           MCP-over-HTTP JSON-RPC client
-  make-contact-composition.js   reference atomic authoring pattern
-  build-*.js           per-section build scripts
+  mcprun.js            run one MCP tool from a JSON args file
+  make-contact-composition.js   reference atomic authoring pattern (the Elementor Pro form)
+  shot.js / cdp.js / probe.js    headless-Chrome screenshot + DOM probe helpers
   schemas/             cached Elementor widget schemas
   php-guard.ini        PHP CLI config for the local site
 
-scripts/    PHP probes that read the live site
-  backup-post.php      dump _elementor_data + generated CSS for a post
+scripts/    PHP probes and helpers that read the live site
+  backup-post.php              dump _elementor_data + generated CSS for a post
+  sideload-product-media.php   push the product images into the Media Library
+  probe-*.php                  read-only probes: pages, media, kit, post meta
 
-pages/      exported live documents (the current state of each page)
 backups/    dated backups, taken before every write
 ```
+
+### What is not here
+
+* **No classic (V3) pipeline.** The emitter that produced `"elType": "container"` + `custom_css`
+  selector blocks is deleted — the atomic editor cannot consume that format, and the two are
+  mutually exclusive. See `pipeline/README.md` for the file-by-file list and the reasoning.
+* **No build artifacts.** There is no `out/` directory: the classic JSON outputs were never
+  deployable and were only ever a trap for the next agent.
+* **No duplicate page exports.** `specs/snapshots/` holds the canonical raw `_elementor_data` for
+  each document — the atomic styles travel *inside* it (per-element `styles` → `variants` →
+  `props` + `custom_css`), so a snapshot is a complete restore point. The generated
+  `local-<id>-frontend-*.css` files are regenerated from the document and are not committed.
+
 
 ---
 
@@ -107,9 +132,15 @@ text sitting outside a widget, elements with no editor title, and duplicate elem
 |---|---|---|
 | Landing — EN | 72 | Live. 6 sections: hero → products → applications → technology → knowledge → contact. |
 | Landing — DE | 135 | Partial — contact section only. |
-| `/en/products/mechanical/` | — | PHP template. Migration not started. |
-| `/en/products/electrostatic/` | — | PHP template. Migration not started. |
-| `/en/products/dust/` | — | PHP template. Migration not started. |
+| `/en/products/mechanical/` | 44 | PHP template. Copy + media transcribed; Elementor build not applied yet. |
+| `/en/products/electrostatic/` | 46 | PHP template. Copy + media transcribed; Elementor build not applied yet. |
+| `/en/products/dust/` | 48 | PHP template. Hero only in the PHP; copy + media transcribed. |
+
+The three product pages already exist as WordPress pages (44 / 46 / 48, children of the `products`
+page) and are also reachable as `/en/products/…` through the virtual routes in
+`inc/products-page-routes.php`. Both paths must render the same Elementor document once the
+migration lands.
+
 
 ### Known gaps on the live EN landing page
 

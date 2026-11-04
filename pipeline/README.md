@@ -1,18 +1,7 @@
 # Build pipeline
 
-> ## ⚠️ Status: mid-migration. The emitter is still CLASSIC and does NOT match the live site.
->
-> The live documents (post 72, post 135) are **Elementor 4.x atomic (V4)**. The emitter in
-> `src/v3.mjs` produces **classic (V3)** output — `"elType": "container"`, `custom_css` with a
-> `selector` block, `flex_direction_tablet`. That output **cannot replace the live document** by
-> import; the two formats are mutually exclusive.
->
-> **Do not treat `out/*.json` as deployable.** They are build artifacts of a superseded emitter.
-
-## What this becomes
-
-The target is an emitter that produces **MCP `build-composition` payloads**, because that is what
-actually built post 72:
+The pipeline emits **MCP `build-composition` payloads** — the format that actually built the live
+documents (post 72 / post 135). There is no JSON import step.
 
 ```jsonc
 {
@@ -24,31 +13,45 @@ actually built post 72:
 }
 ```
 
-`src/v3.mjs` → `src/atomic.mjs` is that rewrite. `build.mjs` and its `verify()` stay; the
-verification rules in `verify()` must move to the atomic rules in `specs/constraints.md`
-(container depth ≤ 3, no `html`/`spacer` widgets, no text outside a widget, no duplicate titles).
+`element_config` holds **plain** values (the ability converts them into the typed `$$type`
+envelopes the atomic store uses). `style` is a **plain CSS string** — nested blocks limited to
+`&:hover` / `&:focus` / `&:active`, media blocks as `@media(--mobile)` / `@media(--tablet)`.
 
-## Current modules
+## Modules
 
 | File | Role |
 |---|---|
-| `src/v3.mjs` | **Classic (V3) emitter — superseded, kept for reference.** 46 KB. |
-| `src/element.mjs` | Neutral authoring layer: `el(type, spec)` → node, id generation, media refs. Reusable as-is. |
-| `src/sections.mjs` | The six section builders (hero, products, applications, technology, knowledge, contact). **The copy and structure here are correct** — only the emitter underneath them is wrong. |
-| `src/content.mjs` | All EN copy as structured data. |
-| `src/assets.mjs` | Media manifest (attachment ids for images, SVGs, video, logos). |
-| `src/tokens.mjs` | Design tokens. |
-| `src/css.mjs` | CSS helpers. |
-| `build.mjs` | Driver: runs the section builders, calls `verify()`, writes `out/*.json`. |
-| `assets/chip-*.svg` | Hero chip icons. **Note:** the live document sources its SVGs from the Media Library by attachment id, not from these files. |
+| `src/atomic.mjs` | The atomic authoring DSL: `el()` / `flex()` / `grid()` / `heading()` / `para()` / `button()` / `image()`, plus `serialize()` → the `build-composition` payload and `checkDepth()` → the ≤3-container-depth rule. |
+| `src/product-content.mjs` | Copy + data for the three EN product pages, transcribed verbatim from the PHP templates and `inc/products-page-helpers.php`. |
+| `src/product-content-de.mjs` | The DE counterpart. Separate module on purpose: the theme keeps hand-written German copy, so DE is not a translation of the EN data. |
+| `src/content.mjs` | Copy + structured data for the landing page (EN), transcribed from the PHP theme. |
+| `src/tokens.mjs` | Design tokens: colours, spacing, radii, shadows, motion. |
+| `src/assets.mjs` | Media manifest — attachment ids for images, SVGs, video, logos. |
+| `src/css.mjs` | CSS → atomic style props. `compileCss()` turns a plain CSS string into the `styles` / `variants` / `custom_css` shape Elementor 4.3.5 stores. Every `$$type` here was reverse-engineered from the live 296 KB document, not guessed. |
+| `src/media-manifest.json` | Written by `scripts/sideload-product-media.php` — the product images that now live in the Media Library as real attachments (ids 164–184). |
+| `assets/chip-*.svg` | Source SVGs for the hero chips. The live document sources its SVGs from the Media Library by attachment id, not from these files. |
+
+## What was removed, and why
+
+The classic (V3) pipeline is gone:
+
+| Removed | Reason |
+|---|---|
+| `src/v3.mjs` | Classic emitter. Produced `"elType": "container"` + `custom_css` selector blocks — a format the atomic editor cannot consume. The two formats are mutually exclusive. |
+| `src/element.mjs` | The classic neutral-node authoring layer that `v3.mjs` compiled. |
+| `src/sections.mjs` | The six classic section builders. Built on `v3.mjs`'s node API, so they could only ever emit classic output. Their **copy and structure were correct** — that content survives in `src/content.mjs` + `specs/elementor-blueprint.md` + `specs/sections-map.md`, and the live document is the working reference. |
+| `build.mjs` | The classic driver. Its `verify()` rules move to `tools/verify-doc.mjs` (see below). |
+| `out/*.json` | Build artifacts of the superseded emitter. Explicitly **not deployable** — a classic document cannot replace an atomic one by import. |
 
 ## Rules the emitter must obey
 
-See `specs/constraints.md`. The short version:
+See `../specs/constraints.md` — it is binding. The short version:
 
 * Element tags only, each with a unique `configuration-id`. No ids, no classes, no text nodes.
-* `element_config` holds **plain** values, not typed `$$type` envelopes.
-* `style` is a **plain CSS string**. Nested blocks are limited to `&:hover` / `&:focus` /
-  `&:active`; media blocks use `@media(--mobile)` / `@media(--tablet)`.
+* `element_config` holds plain values, not typed `$$type` envelopes.
+* `style` is a plain CSS string with the nesting limits above.
+* Container depth ≤ 3 (plus the named inline-group exceptions).
+* Never invent copy — every string comes from `src/content.mjs` / `src/product-content.mjs` or the
+  PHP source they were transcribed from.
 * `configuration-id` is per-request. The server assigns the real element ids and returns them in
   `resolved_xml`; those are the only ids usable in a follow-up `manage-elements` call.
