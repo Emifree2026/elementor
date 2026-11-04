@@ -219,6 +219,36 @@ export function serialize(root) {
 }
 
 /**
+ * Serialise SEVERAL root elements into one composition payload.
+ *
+ * `build-composition` accepts multiple root elements, so a whole page can be
+ * written in one call — one root per section.
+ *
+ * @param {El[]} roots
+ * @returns {{xml_structure: string, element_config: object, style: object, classes: object}}
+ */
+export function serializeAll(roots) {
+	const element_config = {};
+	const style = {};
+	const classes = {};
+
+	roots.forEach((root) =>
+		walk(root, (node) => {
+			if (Object.keys(node.props).length) element_config[node.id] = node.props;
+			if (node.style) style[node.id] = node.style;
+			if (node.classes.length) classes[node.id] = node.classes;
+		})
+	);
+
+	return {
+		xml_structure: roots.map((r) => toXml(r)).join(''),
+		element_config,
+		style,
+		classes,
+	};
+}
+
+/**
  * Count the container depth of a tree, and report the deepest path.
  *
  * Containers are `e-flexbox` / `e-div-block` / `e-grid` / `e-tabs` / `e-tab` /
@@ -240,19 +270,62 @@ export function depthOf(node, depth = 0) {
 	return best;
 }
 
+/** Widget types — leaves. They never add a container level. */
+const WIDGET_TYPES = [T.HEADING, T.PARA, T.BUTTON, T.IMAGE, T.SVG];
+
+/**
+ * Resolve the NAMED inline groups (exception E1) to their generated ids.
+ *
+ * The builder appends a numeric suffix to every configuration-id, so the
+ * named groups are tracked by their BASE name and resolved here.
+ *
+ * @param {El[]} roots
+ * @param {string[]} baseNames e.g. ['emifree-thumb-strip']
+ * @returns {Set<string>} the generated configuration-ids
+ */
+export function collectE1(roots, baseNames) {
+	const found = new Set();
+	roots.forEach((root) =>
+		walk(root, (node) => {
+			if (baseNames.some((base) => node.id === base || node.id.startsWith(`${base}-`))) {
+				found.add(node.id);
+			}
+		})
+	);
+	return found;
+}
+
 /**
  * Assert the container-depth rule for a composition.
+ *
+ * The rule: at most `max` container levels. One extra level is permitted for
+ * the NAMED inline groups (exception E1 in specs/constraints.md §3.1) — an
+ * `e-flexbox` whose children are widgets only. A named group that contains a
+ * container, or any container deeper than the named group, is a violation.
+ *
  * @param {El} root
  * @param {number} [max]
+ * @param {Set<string>} [e1Ids] configuration-ids allowed to sit at max + 1
  * @returns {string[]} problems (empty when compliant)
  */
-export function checkDepth(root, max = 3) {
+export function checkDepth(root, max = 3, e1Ids = new Set()) {
 	const problems = [];
 	const walkDepth = (node, depth) => {
-		const isContainer = ![T.HEADING, T.PARA, T.BUTTON, T.IMAGE, T.SVG].includes(node.type);
+		const isContainer = !WIDGET_TYPES.includes(node.type);
 		const next = isContainer ? depth + 1 : depth;
-		if (next > max) {
-			problems.push(`container depth ${next} exceeds max ${max}: ${node.id}`);
+		if (isContainer && next > max) {
+			if (next === max + 1 && e1Ids.has(node.id)) {
+				const nested = (node.children ?? []).filter((c) => !WIDGET_TYPES.includes(c.type));
+				if (nested.length) {
+					problems.push(
+						`E1 group ${node.id} may contain widgets only, found container(s): ${nested
+							.map((c) => c.id)
+							.join(', ')}`
+					);
+				}
+			} else {
+				problems.push(`container depth ${next} exceeds max ${max}: ${node.id}`);
+			}
 		}
 		(node.children ?? []).forEach((c) => walkDepth(c, next));
 	};

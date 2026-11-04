@@ -46,12 +46,31 @@ export const URLS = {
  * @property {object}   [crossLinks]
  */
 
+/**
+ * The right-rail navigator labels. Copied verbatim from the PHP templates
+ * (`template-parts/page-products-mechanical.php` and its `_de` twin).
+ */
+export const NAV_LABELS = {
+	top: 'To the top',
+	dimensions: 'Dimensions',
+	performance: 'Performance',
+	specs: 'Specs',
+	brochure: 'Brochure',
+	up: 'Up',
+};
+
+/** The "Swipe to see all columns" hint above the specs table (mobile only). */
+export const SWIPE_HINT = 'Swipe to see all columns';
+
 /** @type {ProductPage[]} */
 export const PRODUCTS = [
 	{
 		slug: 'mechanical',
 		label: 'Mechanical',
 		cssid: 'mech',
+		backLabel: 'Back to home',
+		navLabels: NAV_LABELS,
+		sections: ['hero', 'dimensions', 'performance', 'specs', 'brochure'],
 		hero: {
 			backLink: URLS.home,
 			breadcrumb: [
@@ -84,6 +103,7 @@ export const PRODUCTS = [
 			heading: 'Specs',
 			lead: 'Technical comparison of the ECO AIR Cleaner in its two configurations: Advanced and Premium + HEPA. Optional variants and accessories are listed where applicable.',
 			headers: ['Specification', 'Advanced', 'Premium + HEPA'],
+			swipeHint: SWIPE_HINT,
 			rows: [
 				['Designation', 'EAC12-2 / EAC15-2 + CS-X-X', 'EAC12-2 / EAC15-2 + CS-C-F'],
 				['Dimensions [L×W×H]', '818 × 466 × 566 mm', '818 × 470 × 961 mm'],
@@ -133,6 +153,9 @@ export const PRODUCTS = [
 		slug: 'electrostatic',
 		label: 'Electrostatic',
 		cssid: 'elec',
+		backLabel: 'Back to home',
+		navLabels: NAV_LABELS,
+		sections: ['hero', 'dimensions', 'performance', 'specs'],
 		hero: {
 			backLink: URLS.home,
 			breadcrumb: [
@@ -162,6 +185,7 @@ export const PRODUCTS = [
 			heading: 'Specs',
 			lead: 'Technical comparison of the EARIA 1000 m³/h in its two configurations: Basic and Premium.',
 			headers: ['Version', 'Basic', 'Premium'],
+			swipeHint: SWIPE_HINT,
 			rows: [
 				['Designation', 'EAR-10-CS-X', 'EAR-10-CS-X'],
 				['Dimensions', '818 x 466 x 566 mm (L x W x H)', '818 x 466 x 566 mm [L x W x H]'],
@@ -202,6 +226,9 @@ export const PRODUCTS = [
 		slug: 'dust',
 		label: 'Dust',
 		cssid: 'dust',
+		backLabel: 'Back to home',
+		navLabels: NAV_LABELS,
+		sections: [],
 		hero: {
 			backLink: URLS.home,
 			breadcrumb: [

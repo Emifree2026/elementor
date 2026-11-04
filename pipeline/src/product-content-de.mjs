@@ -165,12 +165,31 @@ export const URLS_DE = {
  * @property {object}   [crossLinks]
  */
 
+/**
+ * The right-rail navigator labels. Copied verbatim from the German PHP
+ * templates (`template-parts/page-products-mechanical-de.php` and its twin).
+ */
+export const NAV_LABELS_DE = {
+	top: 'Nach oben',
+	dimensions: 'Abmessungen',
+	performance: 'Leistungskurve',
+	specs: 'Spezifikation',
+	brochure: 'Broschüre',
+	up: 'Nach oben',
+};
+
+/** The "Swipe to see all columns" hint above the specs table (mobile only). */
+export const SWIPE_HINT_DE = 'Wischen für mehr Spalten';
+
 /** @type {ProductPageDe[]} */
 export const PRODUCTS_DE = [
 	{
 		slug: 'mechanical',
 		label: 'Mechanische Filtration',
 		cssid: 'mech',
+		backLabel: 'Zurück zur Startseite',
+		navLabels: NAV_LABELS_DE,
+		sections: ['hero', 'dimensions', 'performance', 'specs', 'brochure'],
 		hero: {
 			backLink: URLS_DE.home,
 			breadcrumb: [
@@ -203,6 +222,7 @@ export const PRODUCTS_DE = [
 			heading: 'Spezifikation',
 			lead: 'Technischer Vergleich des ECO AIR Cleaners in zwei Ausführungen: Advanced und Premium + HEPA. Optionale Varianten und Zubehör sind entsprechend gekennzeichnet.',
 			headers: ['Spezifikation', 'Advanced', 'Premium + HEPA'],
+			swipeHint: SWIPE_HINT_DE,
 			rows: [
 				['Bezeichnung', 'EAC12-2 / EAC15-2 + CS-X-X', 'EAC12-2 / EAC15-2 + CS-C-F'],
 				['Abmessungen [L×B×H]', '818 × 466 × 566 mm', '818 × 470 × 961 mm'],
@@ -252,6 +272,9 @@ export const PRODUCTS_DE = [
 		slug: 'electrostatic',
 		label: 'Elektrostatische Filtration',
 		cssid: 'elec',
+		backLabel: 'Zurück zur Startseite',
+		navLabels: NAV_LABELS_DE,
+		sections: ['hero', 'dimensions', 'performance', 'specs'],
 		hero: {
 			backLink: URLS_DE.home,
 			breadcrumb: [
@@ -281,6 +304,7 @@ export const PRODUCTS_DE = [
 			heading: 'Spezifikation',
 			lead: 'Technischer Vergleich der EARIA 1000 m³/h in zwei Ausführungen: Basis und Premium.',
 			headers: ['Version', 'Basis', 'Premium'],
+			swipeHint: SWIPE_HINT_DE,
 			rows: [
 				['Bezeichnung', 'EAR-10-CS-X', 'EAR-10-CS-X'],
 				['Abmessungen', '818 x 466 x 566 mm (L x W x H)', '818 x 466 x 566 mm [L x W x H]'],
@@ -321,6 +345,9 @@ export const PRODUCTS_DE = [
 		slug: 'dust',
 		label: 'Staub',
 		cssid: 'dust',
+		backLabel: 'Zurück zur Startseite',
+		navLabels: NAV_LABELS_DE,
+		sections: [],
 		hero: {
 			backLink: URLS_DE.home,
 			breadcrumb: [
